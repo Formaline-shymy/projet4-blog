@@ -9,7 +9,7 @@
     <body>
     <header>
     <div class ="navbar-nav ">
-      <a class ="nav-item nav-link" href=view/adminAuthView.php>Administration</a>
+      <a class ="nav-item nav-link" href= connexion.php>Connexion</a>
     </div>
     </header>
 

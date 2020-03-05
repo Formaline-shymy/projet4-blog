@@ -1,7 +1,7 @@
 <?php
-namespace Forteroche\Blog;
+namespace Blog\Model;
 
-require_once("model/Manager.php");
+require_once("model/config.php");
 
 class CommentManager extends Manager
 {

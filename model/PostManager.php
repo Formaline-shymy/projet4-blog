@@ -1,6 +1,6 @@
 <?php
-namespace Forteroche\Blog; // La classe sera dans ce namespace
-require_once("model/Manager.php");
+namespace Blog\Model; // La classe sera dans ce namespace
+require_once("model/config.php");
 
 class PostManager extends Manager
 {
@@ -20,7 +20,7 @@ class PostManager extends Manager
         $post = $req->fetch();
              
         if (empty($post)) {
-       require('404.php');
+       require('error404.php');
         }
         else {
         return $post;

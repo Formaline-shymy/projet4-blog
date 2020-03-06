@@ -9,7 +9,8 @@
     <body>
     <header>
     <div class ="navbar-nav ">
-      <a class ="nav-item nav-link" href= connexion.php>Connexion</a>
+      <a class ="nav-item nav-link" href= admin/connexion.php>Connexion</a>
+      <a class ="nav-item nav-link" href= admin/inscription.php>Inscription</a>
     </div>
     </header>
 

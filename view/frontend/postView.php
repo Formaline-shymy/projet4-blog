@@ -15,7 +15,8 @@
     </p>
 </div>
 
-<h2>Commentaires</h2>
+<p><strong>Laisser un commentaire</strong></p>
+<p><strong>Vous devez <a href= admin/connexion.php> être connecté</a> pour publier un commentaire.</strong></p>
 
 <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
     <div>        

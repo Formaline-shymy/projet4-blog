@@ -1,5 +1,5 @@
 <?php
-$bdd = new PDO('mysql:host=127.0.0.1;dbname=test', 'root', '');
+$db = new PDO('mysql:host=127.0.0.1;dbname=blogjf', 'root', '');
 
 if(isset($_POST['forminscription'])) {
    $pseudo = htmlspecialchars($_POST['pseudo']);
@@ -12,14 +12,14 @@ if(isset($_POST['forminscription'])) {
       if($pseudolength <= 255) {
          if($mail == $mail2) {
             if(filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-               $reqmail = $bdd->prepare("SELECT * FROM administration WHERE mail = ?");
+               $reqmail = $db->prepare("SELECT * FROM administration WHERE mail = ?");
                $reqmail->execute(array($mail));
                $mailexist = $reqmail->rowCount();
                if($mailexist == 0) {
                   if($pass == $pass2) {
-                     $insertmbr = $bdd->prepare("INSERT INTO administration (pseudo, mail, pass) VALUES(?, ?, ?)");
+                     $insertmbr = $db->prepare("INSERT INTO administration (pseudo, mail, password) VALUES(?, ?, ?)");
                      $insertmbr->execute(array($pseudo, $mail, $pass));
-                     $erreur = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";
+                     $erreur = "Votre compte a bien été créé  <a href= connexion.php>Me connecter</a>";
                   } else {
                      $erreur = "Vos mots de passes ne correspondent pas !";
                   }
@@ -32,9 +32,7 @@ if(isset($_POST['forminscription'])) {
          } else {
             $erreur = "Vos adresses mail ne correspondent pas !";
          }
-      } else {
-         $erreur = "Votre pseudo ne doit pas dépasser 255 caractères !";
-      }
+      }  
    } else {
       $erreur = "Tous les champs doivent être complétés !";
    }
@@ -42,7 +40,7 @@ if(isset($_POST['forminscription'])) {
 ?>
 <html>
    <head>
-      <title>inscription admin</title>
+      <title>Inscription membre</title>
       <meta charset="utf-8">
    </head>
    <body>
@@ -53,10 +51,10 @@ if(isset($_POST['forminscription'])) {
             <table>
                <tr>
                   <td align="right">
-                     <label for="pseudo">Pseudo :</label>
+                     <label for="pseudo">Identifiant :</label>
                   </td>
                   <td>
-                     <input type="text" placeholder="Votre pseudo" id="pseudo" name="pseudo" value="<?php if(isset($pseudo)) { echo $pseudo; } ?>" />
+                     <input type="text" placeholder="Votre identifiant" id="pseudo" name="pseudo" value="<?php if(isset($pseudo)) { echo $pseudo; } ?>" />
                   </td>
                </tr>
                <tr>
@@ -93,7 +91,7 @@ if(isset($_POST['forminscription'])) {
                </tr>
                <tr>
                   <td></td>
-                  <td align="center">
+                  <td align="left">
                      <br />
                      <input type="submit" name="forminscription" value="Je m'inscris" />
                   </td>
@@ -105,6 +103,10 @@ if(isset($_POST['forminscription'])) {
             echo '<font color="red">'.$erreur."</font>";
          }
          ?>
+         <div>
+            <br/>
+         <input type="button" value="Retournez à la page d'accueil" class="homebutton" id="btnHome" onClick="window.location = 'http://localhost/blogjf/index.php'"/>
+         
       </div>
    </body>
 </html>

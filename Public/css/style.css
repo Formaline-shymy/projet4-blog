@@ -1,46 +1,87 @@
+@font-face {
+    font-family: 'Kaushan Script';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Kaushan Script'), local('KaushanScript-Regular'), url(https://fonts.gstatic.com/s/kaushanscript/v8/vm8vdRfvXFLG3OLnsO15WYS5DG74wNI.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+
 html, body {
     height: 100%;
 }
 
 body {
-    color:#333534;
     background:rgb(116, 145, 189); 
-    font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
-}
-header {
-    background-color: antiquewhite;
+    font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif; 
 }
 
-}
-h1 {
-    color: rgb(116, 145, 189); 
+.navbar {
+    background-color: antiquewhite;
+    border-radius: 5px;
+   }
+
+.navbar-brand {
+    color: black;
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+    margin-top: -20px;
 }
 
 .titlePost {
     margin-bottom : 0px;
 }
 
+.news{
+    font-family: 'Kaushan Script';
+    text-align: center;
+    font-size: 20px;
+}
+
+
+  hr.style-one {
+    border: 6px solid antiquewhite;
+    border-radius: 3px;
+    }
+
 #global {
-    min-height: 100%;  /* Voir commentaire sur html et body plus haut */
+    min-height: 100%; 
     background: rgb(211, 190, 190);
-    width: 70%;
+    width: 80%;
     margin: auto;	/* Permet de centrer la div */
     text-align: justify;
     padding: 5px 20px;
-}
+    }
 
 #content {
     margin-bottom : 30px;
 }
 
-#titleBlog, #footBlog , header p {
+#titleBlog, #footBlog  {
     text-align: center;
 }
 
-#titleCommentss {
-    font-size : 100%;
+.titleComments {
+    font-size : 20px;
+    color: rgb(116, 145, 189); 
 }
 
 #txtComment {
     width: 50%;
 }
+
+.page-footer {
+    height: 70px;
+    width: 80%;
+	margin: auto;	/* Permet de centrer la div */
+    text-align: center;
+    padding: 5px 20px;
+	background-color:antiquewhite;
+}
+	
+.page-footer span {
+    font-size:1em;
+    font-family: 'Kaushan Script';
+    
+	}
